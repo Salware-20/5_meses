@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    font-family: 'Sora';
+}
+
+:root
+{
+    --Morado: #883AE1;
+    --Morado-claro: #E6D6FC;
+    --Gris-claro: #E5EAF0;
+    --Fondo: linear-gradient(#040606,#080C0C,#121A1C,#1A2629,#223235);
+    --Fondo-blog: #FFFFFF;
+    --Negro: #20293A;
+    --Negro-oscuro: #6C727F;
+}
+
+body
+{
+  background: var(--Fondo);
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+
+.blog-cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(355px,1fr));
+  gap: 15px;
+  padding: 20px;
+  justify-items: center;
+}
+
+
+.blog-card
+{
+    background-color: var(--Fondo-blog);
+    border-radius: 16px;
+    box-shadow: 0px 30px 100px 0px #6C99A2;
+    max-width: min-content;
+    filter: opacity(0.2);
+    transition: all 0.9s ease-in-out;
+}
+
+.blog-card:hover
+{
+  filter:opacity(1);
+}
+
+.blog-card img
+{
+    margin: 16px;
+    border-radius: 16px;
+}
+
+.blog-card p.tag
+{
+    background-color: var(--Morado-claro);
+    color: var(--Morado);
+    max-width: min-content;
+    margin-left: 16px;
+    border-radius: 16px;
+    padding: 6px 16px;
+    font-size: 12px;
+}
+
+.blog-card h1.title
+{
+    margin-left: 16px;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.blog-card p.description
+{
+    margin-left: 16px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: var(--Negro-oscuro);
+}
+
+.blog-card p.author
+{
+  padding: 16px 16px 20px 20px;
+  border-top: 1px var(--Negro-oscuro) solid;
+  font-size: 12px;
+  color: var(--Negro-oscuro);
+}
+
+.blog-card5
+{
+  grid-column: 2/4;
+}
+
+@media (max-width: 768px) {
+  .blog-cards {
+    grid-template-columns: 1fr; /* Cambia la distribución a una columna */
+  }
+
+  .blog-card {
+    max-width: 100%; /* Asegura que las tarjetas ocupen el ancho completo disponible */
+  }
+
+  .blog-card img {
+    width: 300px; /* Asegura que las imágenes ocupen el ancho completo de la tarjeta */
+    height: auto;
+  }
+
+  .blog-card5 {
+    grid-column: auto; /* Permite que la tarjeta 'blog-card5' se adapte al nuevo diseño */
+  }
+}
+
